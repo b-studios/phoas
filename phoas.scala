@@ -1,5 +1,7 @@
 package phoas.basic
 
+// In Hoas the terms could match on the argument of body. That's bad.
+
 trait PreTerm[X]
 case class Lam[X](body: X => PreTerm[X]) extends PreTerm[X]
 case class App[X](fun: PreTerm[X], arg: PreTerm[X]) extends PreTerm[X]
